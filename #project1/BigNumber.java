@@ -16,6 +16,25 @@ public class BigNumber {
             digits[i] = Character.getNumericValue(number.charAt(i));
         }
     }
+    public BigNumber(){
+        this.digits = new int[]{0};
+        this.isNegative = false;
+        this.size = 1;
+    }
+    public BigNumber(int a){
+        if(a<0){
+            this.isNegative = true;
+            a = -a;
+        }else{
+            this.isNegative = false;
+        }
+        String num = String.valueOf(a);
+        this.size = num.length()
+        digits = new int[size];
+        for(int i=0; i < size; i++){
+            digits[i] = Character.getNumericValue(number.charAt(i));
+        }
+    }
     public BigNumber add(BigNumber other) {
         if (this.isNegative == other.isNegative) {
             int maxSize = Math.max(this.size, other.size);
